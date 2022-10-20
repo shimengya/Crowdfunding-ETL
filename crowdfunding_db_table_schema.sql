@@ -53,15 +53,17 @@ CREATE TABLE "contacts" (
 CREATE TABLE "backer" (
 	"index" int NOT NULL,
     "backer_id" varchar NOT NULL,
-    "cf_id" int   NOT NULL,
-    "first_name" varchar NOT NULL,
+  	 "cf_id" int   NOT NULL,
+	"first_name" varchar NOT NULL,
 	"last_name" varchar NOT NULL,
     "email" varchar NOT NULL,
-	 CONSTRAINT "pk_backer" PRIMARY KEY (
-     "cf_id")
+    CONSTRAINT "pk_backer" PRIMARY KEY (
+        "backer_id"
+     )
 );
 
-select * from backers
+
+select * from backer;
 
 ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_contact_id" FOREIGN KEY("contact_id")
 REFERENCES "contacts" ("contact_id");
@@ -72,15 +74,15 @@ REFERENCES "category" ("category_id");
 ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_subcategory_id" FOREIGN KEY("subcategory_id")
 REFERENCES "subcategory" ("subcategory_id");
 
-ALTER TABLE "backers" ADD CONSTRAINT "fk_campaign_cf_id" FOREIGN KEY("cf_id")
-REFERENCES "backers" ("cf_id");
+ALTER TABLE "backer" ADD CONSTRAINT "fk_campaign_cf_id" FOREIGN KEY("cf_id")
+REFERENCES "campaign" ("cf_id");
 
 -- SELECT * FROM contacts
 -- SELECT * FROM campaign
 -- SELECT * FROM category
 -- SELECT * FROM subcategory
 
-SELECT * FROM backers;
+
 
 
 
