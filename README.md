@@ -1,18 +1,19 @@
 # Crowdfunding-ETL
 ## Summary for this project
 
-In this project, I have used both an ETL process on this dataset and a data analysis by using SQL queries to better provide the information of crowdfunding.
+In this project, I have used both an ETL process (Python & Pandas) on this dataset and a data analysis by using SQL queries to better provide the information for crowdfunding.
 
 ## Process Steps
-1. Similiar to the previous project, it is important to build up relationships between each index. 
+1. Similiar to the previous project, it is important to build up relationships between each index at the beginning. 
 ![crowdfunding_db_relationships](/crowdfunding_db_relationships.png)
 
-2. In this Challenge, Python, Pandas, and Jupyter notebooks were used to do the extract and transform phases. Specifically, it extracts and transforms the backers’ contact information from a CSV file to create a DataFrame that will be exported as a CSV file. [backer_info](/backer_info.csv)
+2. In this Challenge, Python, Pandas, and Jupyter notebooks were used to do the extract and transform phases. Specifically, it extracts and transforms the backers’ contact information from a CSV file to create a DataFrame that will be exported as a CSV file. 
+[backer_info](/backer_info.csv)
 
 3. Then it does the load phase. Specifically, it uses the dataset to create an ERD and a table schema for creating a new table in the crowdfunding_db database. 
 
 4. And, it uploads the CSV file that contains the backers’ information into this table. 
-  - We only select "live" campaign
+  - We only select "live" campaign for further analysis.
 
 5. Finally, it performs a data analysis on the crowdfunding_db database by using SQL queries.
 
